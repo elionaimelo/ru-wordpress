@@ -3,13 +3,15 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="pt-BR">
+<html class="no-js" <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo('charset'); ?>" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>RU - Restaurante Universitário | UFRN</title>
+    <title><?php wp_title(' | ', 'echo', 'right'); ?><?php bloginfo('name'); ?></title>
+    <meta name="title" content="Fórum negócios experience 2020" />
+    <meta name="description" content="<?php bloginfo('description'); ?>" />
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
