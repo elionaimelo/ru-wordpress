@@ -6,3 +6,24 @@
 .historia h1>a {
     overflow-wrap: break-word;
 }
+
+.digai .form-digai {
+    padding: 20px 40px;
+}
+
+.form-digai p {
+    font-size: initial;
+    margin-top: 0;
+    line-height: 23px;
+}
+
+.form-digai label {
+    font-size: 14px;
+    color: #1c75bb;
+    width: 100%;
+}
+
+.form-digai .form-control {
+    font-size: inherit;
+    font-weight: 500;
+}

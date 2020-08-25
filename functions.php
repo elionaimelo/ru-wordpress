@@ -15,7 +15,9 @@ function carrega_scripts(){
 
     wp_enqueue_script( 'modenizr',  get_template_directory_uri().  '/assets/js/vendor/modernizr-2.6.2.min.js', array(), null, true);
     wp_enqueue_script( 'all',  get_template_directory_uri().  '/assets/js/all.js', array(), null, true);
-    wp_enqueue_script( 'scripts',  get_template_directory_uri().  '/assets/js/scripts.min.js', array(), null, true);
+	wp_enqueue_script( 'scripts',  get_template_directory_uri().  '/assets/js/scripts.min.js', array(), null, true);
+	wp_enqueue_script( 'mask',  get_template_directory_uri().  '/assets/js/mask-plugin.js', array(), null, true);
+          wp_enqueue_script( 'pointcom',  get_template_directory_uri().  '/assets/js/pointcom_mask.js', array(), null, true);
 
     wp_enqueue_style( 'forum', get_stylesheet_uri() );
 	wp_enqueue_style( 'all', get_template_directory_uri() . '/assets/css/all.css', array(), '1', 'all');
