@@ -32,8 +32,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-danger" href="#">
-                <img src="assets/img/logo.jpg" alt="Logo do restaurante universitário da UFRN">
+            <a class="navbar-brand text-danger" href="<?php echo esc_url( home_url() ); ?>">
+               <?php 
+
+                  if ( has_custom_logo() ) {
+                     the_custom_logo(); 
+                  } else {
+                     echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+                  }
+               ?>
             </a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">

@@ -1,0 +1,8 @@
+.carousel-caption img {
+    max-width: 100%;
+    width: auto;
+}
+
+.historia h1>a {
+    overflow-wrap: break-word;
+}

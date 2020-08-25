@@ -4,15 +4,9 @@
         $('#flash-overlay-modal').modal();
 
         new WOW().init();
-
-        // $(".ingredientes ul.almoco").matchHeight({
-        //     target: $(".acompanhamentos ul.almoco")
-        // });
-        //
-        // $(".ingredie" +
-        //         "ntes ul.jantar").matchHeight({
-        //     target: $(".acompanhamentos ul.jantar")
-        // });
+        jQuery(document).ready(function ($) {
+    jQuery('img').removeAttr('width').removeAttr('height');
+});
     </script>
 
 </body>

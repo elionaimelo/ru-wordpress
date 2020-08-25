@@ -80,236 +80,17 @@ get_header();
                         Confira o<br /> cardápio de hoje
                     </h1>
                 </div>
-                <div class="col-md-4">
-                    <!-- <label for="unidade" class="legenda-select">Cardápio do dia</label>
-                <select id="unidade" class="form-control">
-                  <option>Campus Central / Centro de Saúde - NATAL</option>
-                </select> -->
-                </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4">
-                    <div class="box-ingredientes proteinas">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-proteinas.jpg" class="top-ribbon" alt="">
-
-                        <div class="ingredientes">
-                            <?php
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'pratoprincipal',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Café',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC'
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Café</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft cafe">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php else :
-                                echo "sem alimentação cadastrada";
-                            endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                            <?php
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'pratoprincipal',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Almoço',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC'
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Almoço</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft almoco">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                            <?php
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'pratoprincipal',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Janta',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC'
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Jantar</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft jantar">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                        </div>
-
-                        <a class="btn-sugira" data-toggle="modal" data-target="#myModalNorm">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bottom-proteinas.jpg" class="bottom-ribbon" alt="Link para sugerir uma nova proteina">
-                        </a>
-                    </div>
-
+                    <?php include("inc/box-prato-principal.php"); ?>
                 </div>
                 <div class="col-md-4">
-                    <div class="box-ingredientes acompanhamentos">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-acompanhamento.jpg" class="top-ribbon" alt="">
-
-                        <div class="ingredientes">
-                            <?php
-
-                            $today = date('Ymd', strtotime("now"));
-                            echo $today;
-
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'acompanhamentos',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Café',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC',
-                                'meta_query' => array(
-                                    array(
-                                        'key' => 'data_acompanhamento',
-                                        'value' => $today,
-                                    )
-                                )
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Café</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft cafe">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                            <?php
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'acompanhamentos',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Almoço',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC',
-                                'meta_query' => array(
-                                    array(
-                                        'key' => 'data_acompanhamento',
-                                        'value' => $today,
-                                    )
-                                )
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Almoço</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft almoco">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                            <?php
-                            $the_query = new WP_Query(array(
-                                'post_type'            => 'acompanhamentos',
-                                'posts_per_page'    => -1,
-                                'meta_key'            => 'refeicao',
-                                'meta_value'    => 'Janta',
-                                'orderby'            => 'meta_value',
-                                'order'                => 'DESC',
-                                'meta_query' => array(
-                                    array(
-                                        'key' => 'data_acompanhamento',
-                                        'value' => $today,
-                                    )
-                                )
-                            ));
-                            if ($the_query->have_posts()) : ?>
-                                <h4>Jantar</h4>
-                                <hr>
-                                <ul class="wow bounceInLeft jantar">
-                                    <?php while ($the_query->have_posts()) : $the_query->the_post();
-                                        $class = get_field('refeicao');
-                                    ?>
-
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
-                            ?>
-                        </div>
-
-                        <a class="btn-sugira" data-toggle="modal" data-target="#myModalNorm">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bottom-acompanhamento.jpg" class="bottom-ribbon" alt="Link para sugerir acompanhamento">
-                        </a>
-                    </div>
+                    <?php include("inc/box-acompanhamentos.php"); ?>
                 </div>
                 <div class="col-md-4">
-                    <div class="box-ingredientes vegetariano">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-vegetariano.jpg" class="top-ribbon" alt="">
-
-                        <div class="ingredientes">
-                            <h4>Almoço</h4>
-                            <hr>
-                            <ul class="wow bounceInRight almoco">
-
-                            </ul>
-                            <h4>Jantar</h4>
-                            <hr>
-
-                            <ul class="wow bounceInRight jantar">
-
-                            </ul>
-                        </div>
-
-                        <a class="btn-sugira" data-toggle="modal" data-target="#myModalNorm">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bottom-vegetariano.jpg" class="bottom-ribbon" alt="Link para sugerir um alimento vegetariano">
-                        </a>
-                    </div>
+                    <?php include("inc/box-vegetariano.php"); ?>
                 </div>
             </div>
         </div>
@@ -326,19 +107,18 @@ get_header();
             </div>
         </div>
 
-        <?php
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page'  => 3,
-            'order' => 'ASC',
-        );
-        $the_query = new WP_Query($args);
-        ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-                <section class="container-fluid noticias">
-                    <div class="container">
+        <section class="container-fluid noticias">
+            <div class="container">
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page'  => 3,
+                    'order' => 'ASC',
+                );
+                $the_query = new WP_Query($args);
+                ?>
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <h1 class="wow bounceInLeft">
@@ -352,20 +132,24 @@ get_header();
                                     </p>
                             </div>
                             <div class="col-md-6 remove-padding mask">
-                                <img src="http://www.ru.ufrn.br/imagens_destaques" class="pull-right img-responsive" alt="" width="622" height="350">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail('large', array('class' => 'img-responsive'));
+                                } else {
+                                    echo '<img src="' . get_bloginfo('stylesheet_directory')
+                                        . '/assets/img/thumbnail-default.jpg" class="img-responsive" />';
+                                }
+                                ?>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                <?php wp_reset_postdata(); ?>
-            <?php endwhile; ?>
-        <?php else :  ?>
-            <p><?php _e('Houve um erro! Desculpe!'); ?></p>
-        <?php endif; ?>
-
-
-
+                        <?php wp_reset_postdata(); ?>
+                    <?php endwhile; ?>
+                <?php else :  ?>
+                    <p><?php _e('Houve um erro! Desculpe!'); ?></p>
+                <?php endif; ?>
+            </div>
+        </section>
     </section>
     <section class="container-fluid historia" id="funcionamento">
         <div class="container">
@@ -424,7 +208,7 @@ get_header();
                     </h1>
                 </div>
                 <div class="col-md-6 remove-padding">
-                    <img src="assets/img/bg-sobre.jpg" class="pull-right img-sobre" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-sobre.jpg" class="pull-right img-sobre" alt="">
                 </div>
             </div>
         </div>
@@ -433,9 +217,9 @@ get_header();
     <section class="container-fluid digai" id="digai">
         <div class="container">
 
-            <img src="assets/img/bg-contato.png" class="bg-contato" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-contato.png" class="bg-contato" alt="">
 
-            <img src="assets/img/personagens.png" class="personagens" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/personagens.png" class="personagens" alt="">
 
 
             <div class="row">
@@ -499,18 +283,18 @@ get_header();
             <ul>
                 <li>
                     <a href="http://www.sistemas.ufrn.br/portal/PT/" target="_blank">
-                        <img src="assets/img/ufrn.png" alt="UFRN">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ufrn.png" alt="UFRN">
                     </a>
 
                 </li>
                 <li>
                     <a href="http://www.sedis.ufrn.br/" target="_blank">
-                        <img src="assets/img/sedis.png" alt="SEDIS">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sedis.png" alt="SEDIS">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.facebook.com/ufrnru" target="_blank">
-                        <img src="assets/img/facebook.png" alt="FACEBOOK">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook.png" alt="FACEBOOK">
                     </a>
                 </li>
             </ul>
@@ -722,230 +506,10 @@ get_header();
         </div>
     </div><!-- ./Modal notícias -->
     <!-- Modal sugestao de alimento -->
-    <div class="modal fade modal-historia" id="modal-historia" tabindex="-1" role="dialog" aria-labelledby="myModalHistoria">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <h3>RU: DESDE O INÍCIO, UMA CONQUISTA DE TODOS</h3>
-
-                    <h4>O Restaurante Universitário da UFRN tem uma longa história, sempre unida aos avanços da
-                        universidade. </h4>
-
-                    <hr>
-                    <p>
-                        Brasília era a nova capital do país. A seleção canarinho havia conquistado o bicampeonato
-                        mundial de futebol. A TV a cores invadia a casa dos brasileiros. E a juventude cada vez mais se
-                        organizava, lutando pelos seus direitos e por mudanças no comportamento da sociedade. Em meio a
-                        esse contexto é que nasce o nosso conhecido RU.
-                    </p>
-                    <p>
-                        O Restaurante Universitário foi criado a partir da conquista dos estudantes universitários e do
-                        DCE da época. Em 1963, na gestão do presidente Francisco Ginani, então estudante da Faculdade de
-                        Medicina da UFRN, foi reivindicado um restaurante que atendesse às necessidades da classe
-                        estudantil. Esse fato aconteceu durante o reitorado do Dr. Onofre Lopes, num período em que os
-                        alunos secundaristas faziam as suas refeições na Casa do Estudante e precisavam de melhores
-                        condições de alimentação.
-                    </p>
-
-                    <p>
-                        Reconhecendo essa necessidade, o então prefeito de Natal Djalma Maranhão cedeu um terreno no
-                        bairro de Petrópolis para a implantação do RU, com a condição de que fosse construído dentro de
-                        um determinado prazo. Devido à escassez de recursos e à resistência do reitor da época em
-                        aceitar edificar uma instalação provisória o prazo expirou, o que fez com que o terreno voltasse
-                        a pertencer à prefeitura. Hoje, neste local, está o Palácio dos Esportes da capital do estado.
-                    </p>
-
-                    <p>
-                        A luta continuou por parte dos estudantes, culminando na Resolução nº 58/63-U. Com ela, o
-                        Conselho Universitário da UFRN aprovou, em reunião no dia 16 de dezembro de 1963, a liberação da
-                        quantia de Cr$ 150.000 mensais para o aluguel de um local destinado a funcionar como Restaurante
-                        Universitário. O RU foi inaugurado em março de 1964, na Av. Deodoro, próximo ao Instituto
-                        Infantil Varela Santiago, com capacidade para oferecer café, almoço e jantar a cerca de 200
-                        universitários.
-                    </p>
-
-                    <p>
-                        Nessa época não existia o campus central da UFRN. Os cursos funcionavam em prédios distintos,
-                        mas todos próximos à região do Centro da cidade, Petrópolis e Tirol. Durante a década de 1970
-                        foi iniciada a construção do Campus Central no bairro de Lagoa Nova e, com isso, o CONSUNI,
-                        através da Resolução 70/72 – em 13 de novembro de 1972 – homologou o contrato entre a UFRN e uma
-                        empresa de construção civil, no valor de Cr$ 624.877,50, para construir o Restaurante
-                        Universitário no Campus Central. Em março de 1973, o Reitor Genário Alves da Fonseca proclamou a
-                        conclusão da obra perante assembleia universitária, em seu relatório, e o RU permanece no mesmo
-                        local até hoje.
-                    </p>
-
-                    <p>
-                        Com a saída do Restaurante Universitário do Centro da cidade, os estudantes da área médica que
-                        assistiam aulas na Escola de Saúde e necessitavam do apoio das estruturas do refeitório seguiam
-                        para o RU do campus central no ônibus da própria Universidade. Esse transporte ficou conhecido
-                        como “Upa neguinho”, apelido que veio da música homônima composta por Gianfrancesco Guarnieri e
-                        Edu Lobo para a peça “Arena conta Zumbi” e gravada por Elis Regina em 1966 (Upa neguinho na
-                        estrada / Upa pra lá e pra cá).
-                    </p>
-
-                    <p>
-                        Com a crescente demanda dos estudantes de saúde, houve a necessidade da instalação de um
-                        refeitório que atendesse à região. Por isso, foi criado um refeitório no Hospital Universitário
-                        Onofre Lopes que alimenta cerca de 300 pessoas.
-                    </p>
-
-                    <p>
-                        Hoje existem planos de construção de um novo restaurante, além da expansão de novas unidades em
-                        todos os polos da UFRN. O RU procura sempre acompanhar a crescente demanda de alunos e oferecer
-                        o máximo em suporte e atenção a cada estudante.
-                    </p>
 
 
-                    <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive" src="assets/img/slide1-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    O Reitor Dr. Genário Alves da Fonseca visita o campo de obras da UFRN. Ao fundo, o
-                                    atual Setor I.<br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="assets/img/slide2-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    Um dos primeiros prédios da Residência Universitária da UFRN.<br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="assets/img/slide3-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    Antes da construção do campus central, os setores de aula se espalhavam por prédios
-                                    diferentes no Centro da cidade. Na foto, o prédio do CRUTAC (Centro Rural
-                                    Universitário de Ação Comunitária), onde hoje funciona a Câmara Municipal de
-                                    Natal.<br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="assets/img/slide4-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    Restaurante do Centro de Ciências da Saúde, inaugurado em 27 de maio de 1991.
-                                    <br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="assets/img/slide5-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    Restaurante do Centro de Ciências da Saúde, inaugurado em 27 de maio de 1991.
-                                    <br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="assets/img/slide6-inner.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    Restaurante do Centro de Ciências da Saúde, inaugurado em 27 de maio de 1991.
-                                    <br />
-                                    Fonte: Acervo fotográfico da AGECOM/UFRN
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <h4>
-                        FONTES:
-                    </h4>
-
-                    <p>
-                        ACERVO FOTOGRÁFICO DA AGECOM/UFRN.
-                    </p>
-
-                    <p>
-                        CAMPOS, Paulo Roberto Paiva. <strong>Entrevista sobre a história do RU</strong>. Entrevista
-                        concedida a Mauricio da Silva Oliveira Junior.
-                    </p>
-                    <p>
-                        MELO, Veríssimo de; CALADO, Carmen Lúcia de Araújo. <strong>Síntese Cronológica da UFRN</strong>:
-                        1958/2010. Natal: EDUFRN, 2011. 594 p.
-                    </p>
-                    <p>
-                        SILVA, Justina Iva de Araújo. <strong>Estudantes e Política</strong>: Estudo de um movimento (RN
-                        1960-1969). São Paulo: Cortez, 1989.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div><!-- ./Modal sugestao de alimento -->
-
-    <!-- Modal -->
-
-
-
-    <!-- Modal galeria de vídeo -->
-    <div class="modal fade" id="modal-nutri" tabindex="-1" role="dialog" aria-labelledby="myModalNorm" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3>Vídeos</h3>
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
-                            <a class="thumbnail" data-toggle="modal" href="#video2">
-                                <img class="img-responsive" src="assets/video/videocap17.png" alt="">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
-                            <a class="thumbnail" data-toggle="modal" href="#video4">
-                                <img class="img-responsive" src="assets/video/videocap19.png" alt="">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
-                            <a class="thumbnail" data-toggle="modal" href="#video5">
-                                <img class="img-responsive" src="assets/video/videocap20.png" alt="">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-xs-6 thumb">
-                            <a class="thumbnail" data-toggle="modal" href="#video6">
-                                <img class="img-responsive" src="assets/video/videocap21.png" alt="">
-                            </a>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
-    </div><!-- ./ -->
-
-    <!-- Modal -->
-
-
+    <?php include("inc/modal-nutri.php"); ?>
+    <?php include("inc/modal-historia.php"); ?>
 
 
     <div id="video2" class="modal fade" tabindex="-1">
@@ -1139,81 +703,7 @@ get_header();
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade modal-historia" id="modal-funcionamento" tabindex="-1" role="dialog" aria-labelledby="myModalHistoria">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <h3>Saiba tudo sobre o funcionamento do RU</h3>
-
-                    <hr>
-
-                    <p>Olá, se você está navegando no site do RU é por quê tem interesse em
-                        conhecer melhor os nossos serviços. Então preparamos algumas perguntas e
-                        respostas com informações importantes para o bom uso do nosso espaço.
-                        Agradecemos sua atenção e parceria.</p>
-
-                    <h4>Quem são os usuários do RU?</h4>
-
-                    <p>São usuários do Restaurante Universitário os integrantes do corpo discente
-                        (ensino básico, técnico e tecnológico, graduação e pós-graduação), regularmente
-                        matriculados na UFRN, servidores técnico-administrativos e docentes na Universidade
-                        Federal do Rio Grande do Norte em atividade institucional.</p>
-
-                    <h4>Como adquirir o cartão do RU?</h4>
-
-                    <p>Para adquirir o cartão de acesso ao RU da UFRN, os usuários devem
-                        comparecer na Pró-reitoria de Assuntos Estudantis (PROAE) no Campus Central e
-                        apresentar o atestado de matrícula e documento com foto, comprovando assim o
-                        vínculo com a UFRN.</p>
-
-                    <h4>Onde recarregar o cartão do RU?</h4>
-
-                    <p>Os usuários devem efetuar a recarga do cartão do Restaurante Universitário da UFRN
-                        com a geração da GRU (Guia de Recolhimento da União), no SIGAA.</p>
-
-                    <p>Para emitir uma GRU é fácil, basta acessar o <strong>SIGAA &gt; Menu Discente &gt; Outros &gt;
-                            Compra de Créditos</strong> e dar prosseguimento ao pagamento. Em até 48 horas os
-                        créditos estarão disponíveis para uso.</p>
-
-                    <p>O valor da GRU deve ser pago, exclusivamente, em agências do Banco do Brasil.</p>
-
-                    <h4>Qual o horário de funcionamento do RU?</h4>
-
-                    <h5><i class="glyphicon glyphicon-chevron-right"></i> Café da manhã (exclusivo para estudantes residentes)</h5>
-
-                    <p>Segunda à sexta das 6h30 às 7h30. Aos sábados, domingos e feriados das 7h30 às 8h30</p>
-
-                    <h5><i class="glyphicon glyphicon-chevron-right"></i> Almoço</h5>
-
-                    <p>Segunda à sexta das 10h30 às 13h30. Aos sábados, domingos e feriados das 11h às 13h.</p>
-
-                    <h5><i class="glyphicon glyphicon-chevron-right"></i> Jantar</h5>
-
-                    <p>Segunda à sexta das 17h até às 19h. Aos sábados, domingos e feriados das 17h às 18h.</p>
-
-                    <h4>Dicas importantes</h4>
-
-                    <p>O cartão do RU é de uso exclusivo da pessoa credenciada, ou seja, não pode
-                        ser utilizado por terceiros, sendo assim intransferível e inalienável.
-                        Só tem acesso às refeições do RU quem está com o cartão em mãos, por isso
-                        cuidado para não esquecer o cartão em outro lugar.</p>
-
-
-                </div>
-                <div class="modal-footer">
-                    <h4>FONTE:</h4>
-
-                    <p>Direção RU / UFRN</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include("inc/modal-funcionamento.php"); ?>
 </main>
 
 <?php
