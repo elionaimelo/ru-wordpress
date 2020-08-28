@@ -1,7 +1,7 @@
 <?php
                 $args = array(
                     'post_type' => 'post',
-                    'posts_per_page'  => 3,
+                    'posts_per_page'  => 4,
                     'order' => 'ASC',
                 );
                 $the_query = new WP_Query($args);
@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h1 class="wow bounceInLeft">
-                                    <a href="#" data-toggle="modal" data-target="#nutricionista-do-ru-da-dicas-de-higiene-de-alimentos-e-alimentacao-saudavel-durante-a-pandemia-da-covid-19">
+                                    <a href="#" data-toggle="modal" data-target="#noticia<?php echo $id = get_the_ID();?>">
                                         <?php the_title() ?>
                                     </a>
                                 </h1>
@@ -37,3 +37,6 @@
                 <?php else :  ?>
                     <p><?php _e('Houve um erro! Desculpe!'); ?></p>
                 <?php endif; ?>
+
+
+       

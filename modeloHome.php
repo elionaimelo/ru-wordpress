@@ -109,7 +109,7 @@ get_header();
 
         <section class="container-fluid noticias">
             <div class="container">
-                 <?php include('inc/destaques.php'); ?>
+                <?php include('inc/destaques.php'); ?>
             </div>
         </section>
     </section>
@@ -176,6 +176,42 @@ get_header();
         </div>
 
     </section>
+    <section class="container-fluid aplicativo" id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="wow bounceInLeft">
+                        
+                            Já baixou<br />
+                            nosso<br />
+                            aplicativo?
+                      
+                    </h1>
+                </div>
+                <div class="col-md-6 remove-padding">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <?php if( get_field('link_google_play')  ) { ?>
+                    <a href="<?php echo the_field('link_google_play') ?>" target="_blank">
+                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/googleplay.png" class="img-responsive img-googleplay" alt="">
+                    </a>
+                <?php } ?>
+            
+                        </div>
+                        <div class="col-md-6">
+                <?php if( get_field('link_apple_store')  ) { ?>
+                    <a href="<?php echo the_field('link_apple_store') ?>" target="_blank">
+                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/applestore.png" class="img-responsive img-applestore" alt="">
+                    </a>
+                <?php }else { ?>
+                <?php echo '<p class="pull-right embreve">em breve</p>'; } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <section class="container-fluid digai" id="digai">
         <div class="container">
 
@@ -196,7 +232,7 @@ get_header();
                     </p>
                 </div>
                 <div class="col-md-6">
-                        <?php echo do_shortcode("[contact-form-7 id='115' html_class='form-digai']"); ?>
+                    <?php echo do_shortcode("[contact-form-7 id='115' html_class='form-digai']"); ?>
                 </div>
 
             </div>
@@ -292,148 +328,9 @@ get_header();
     </div>
 
     <!-- ./Modal notícias -->
-    <div class="modal fade modal-historia" id="nutricionista-do-ru-da-dicas-de-higiene-de-alimentos-e-alimentacao-saudavel-durante-a-pandemia-da-covid-19" tabindex="-1" role="dialog" aria-labelledby="myModalNorm" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <h3>NUTRICIONISTA DO RU D&Aacute; DICAS DE HIGIENE DE ALIMENTOS E ALIMENTA&Ccedil;&Atilde;O SAUD&Aacute;VEL DURANTE A PANDEMIA DA COVID-19</h3>
-
-                    <h4></h4>
-
-                    <hr>
-                    <p>
-                        <p>A suspens&atilde;o das aulas da Universidade Federal do Rio Grande do Norte, por conta da pandemia da COVID-19, j&aacute; ultrapassou o per&iacute;odo de 30 dias. E, de acordo com especialistas, &eacute; normal que durante o distanciamento social, orientado pelos &oacute;rg&atilde;os de sa&uacute;de, a ansiedade se manifeste com mais frequ&ecirc;ncia e muitas pessoas procurem nos alimentos uma compensa&ccedil;&atilde;o para os momentos de ociosidade.</p>
-                    </p>
-                    <p>
-                        <p>Para entender melhor nossa rela&ccedil;&atilde;o com a alimenta&ccedil;&atilde;o diante de situa&ccedil;&otilde;es de estresse emocional e buscar orienta&ccedil;&otilde;es de cuidados preventivos para manusear os g&ecirc;neros aliment&iacute;cios, n&oacute;s conversamos com a nutricionista do Restaurante Universit&aacute;rio da UFRN, Rosa S&aacute;, que tamb&eacute;m &eacute; Mestre em Sa&uacute;de Coletiva. Ela reuniu algumas dicas &uacute;teis para o momento que estamos vivendo.</p>
-                    </p>
-                    <p>
-                        <p><strong>Higiene dos alimentos e utens&iacute;lios</strong></p>
-                    </p>
-                    <p>
-                        <p>Para Rosa S&aacute;, mesmo durante o isolamento social, &eacute; preciso manter uma alimenta&ccedil;&atilde;o saud&aacute;vel, evitando a ingest&atilde;o em excesso de alimentos, principalmente, aqueles considerados n&atilde;o saud&aacute;veis, como os ricos em s&oacute;dio e gordura saturada. Ainda de acordo com a nutricionista, alguns cuidados devem ser adotados, antes, durante e ap&oacute;s o preparo dos alimentos.</p>
-                    </p>
-                    <p>
-                        <p>Ela ressalta que temos de manter as m&atilde;os higienizadas, lavando-as com &aacute;gua e sab&atilde;o para evitar qualquer tipo de contamina&ccedil;&atilde;o. A nutricionista faz mais um alerta: &ldquo;n&atilde;o devemos compartilhar copos, pratos e utens&iacute;lios sem que esses sejam higienizados&rdquo;. Ela destaca tamb&eacute;m algumas dicas para a hora da compra dos alimentos. No caso dos alimentos comprados a granel (castanhas, amendoins ou granola, por exemplo) que podem ser consumidos crus, eles devem passar por algum tipo de coc&ccedil;&atilde;o, antes da ingest&atilde;o.</p>
-                    </p>
-                    <p>
-                        <p><strong>Cuidados dentro e fora de casa</strong></p>
-                    </p>
-                    <p>
-                        <p>Mesmo com algumas restri&ccedil;&otilde;es de hor&aacute;rio de funcionamento de mercados e de supermercados e de circula&ccedil;&atilde;o de pessoas nesses estabelecimentos, os consumidores precisam redobrar a aten&ccedil;&atilde;o. A nutricionista do RU esclarece que n&atilde;o se deve experimentar frutas ou verduras em feiras livres e supermercados devido &agrave; grande exposi&ccedil;&atilde;o ao p&uacute;blico.</p>
-                    </p>
-                    <p>
-                        <p>E ela prossegue com as orienta&ccedil;&otilde;es: &ldquo;antes de ir ao supermercado, &eacute; interessante fazer uma lista de compras, prevendo sempre o que ir&aacute; consumir para reduzir a ida desnecess&aacute;ria a esses locais; ao sair de casa, devemos procurar nos proteger com o uso de m&aacute;scara e, ao retornar das compras, fazermos a higieniza&ccedil;&atilde;o completa das embalagens com &aacute;gua e sab&atilde;o ou &aacute;lcool gel 70% antes de guard&aacute;-las&rdquo;, complementa nossa entrevistada.</p>
-                    </p>
-                    <p>
-                        <p>Rosa S&aacute; chama a aten&ccedil;&atilde;o para evitar o consumo de comida japonesa com pescado cru, pois n&atilde;o sabemos ao certo os cuidados que foram empregados no preparo desse produto. Ela encerra a conversa ressaltando a necessidade de que as pessoas fa&ccedil;am um planejamento alimentar, com card&aacute;pio e hor&aacute;rios predefinidos.</p>
-                    </p>
-                    <p>
-                        <p><strong>Fonte:</strong> Bruno C&aacute;ssio - Setor de M&iacute;dias da SEDIS/UFRN.</p>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div><!-- ./Modal notícias -->
-    <div class="modal fade modal-historia" id="ru-central-reabre-ao-publico-nesta-segunda-feira-17" tabindex="-1" role="dialog" aria-labelledby="myModalNorm" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <h3>RU CENTRAL REABRE AO P&Uacute;BLICO NESTA SEGUNDA-FEIRA (17)</h3>
-
-                    <h4></h4>
-
-                    <hr>
-                    <p>
-                        <p>O Restaurante Universit&aacute;rio (RU) do campus central da Universidade Federal do Rio Grande do Norte (UFRN) retoma o atendimento ao p&uacute;blico nesta segunda-feira, 17, ap&oacute;s passar por reforma para adequa&ccedil;&atilde;o &agrave;s condi&ccedil;&otilde;es de acessibilidade &agrave;s pessoas com necessidades especiais de locomo&ccedil;&atilde;o.</p>
-                    </p>
-                    <p>
-                        <p>A diretora do RU, Michelle Medeiros, detalha que a obra incluiu a&nbsp;instala&ccedil;&atilde;o de barras de apoio na entrada e nos banheiros, de rampas de acesso para cadeirantes e de piso t&aacute;til para auxiliar pessoas com defici&ecirc;ncia visual.&nbsp;O sistema hidr&aacute;ulico e as instala&ccedil;&otilde;es da copa&nbsp;tamb&eacute;m foram readequados, a fim de melhorar&nbsp;as condi&ccedil;&otilde;es de trabalho e&nbsp;os servi&ccedil;os prestados &agrave; comunidade universit&aacute;ria.</p>
-                    </p>
-                    <p>
-                        <p>As refei&ccedil;&otilde;es oferecidas pelo Restaurante Universit&aacute;rio t&ecirc;m todo o processo de produ&ccedil;&atilde;o acompanhado por uma equipe de nutricionistas, que elaboram card&aacute;pios semanais para caf&eacute;, almo&ccedil;o e jantar, com o objetivo de agradar os paladares e priorizar o uso de alimentos saud&aacute;veis. H&aacute; inclusive op&ccedil;&otilde;es vegetarianas diariamente e refei&ccedil;&otilde;es voltadas ao p&uacute;blico vegano &agrave;s sextas-feiras.</p>
-                    </p>
-                    <p>
-                        <p>O servi&ccedil;o &eacute; destinado a todos os alunos, professores e servidores t&eacute;cnico-administrativos da UFRN, no almo&ccedil;o e jantar. As refei&ccedil;&otilde;es custam R$ 8,00&nbsp;para usu&aacute;rios sem subs&iacute;dio (servidores e alunos n&atilde;o priorit&aacute;rios) e R$ 4,00 para alunos subsidiados pela Assist&ecirc;ncia Estudantil.&nbsp;Do total de estudantes atendidos no RU, aproximadamente 90% recebem alimenta&ccedil;&atilde;o gratuita.</p>
-                    </p>
-                    <p>
-                        <p><strong>Acesso ao RU</strong></p>
-                    </p>
-                    <p>
-                        <p>No m&ecirc;s passado, o RU implantou um novo sistema de acesso aos seus refeit&oacute;rios. Desde ent&atilde;o, o usu&aacute;rio que possui qualquer cart&atilde;o RFID &ndash; identifica&ccedil;&atilde;o por radiofrequ&ecirc;ncia, que funciona por aproxima&ccedil;&atilde;o &ndash; pode utiliz&aacute;-lo para a entrada nos refeit&oacute;rios. No caso dos estudantes calouros, a diretora do RU esclarece que eles devem procurar a Central de Atendimento ao Discente (Cadis), no Rel&oacute;gio do Sol, no campus central, para solicitar o Cart&atilde;o do RU, sem custos, e, em seguida, fazer a migra&ccedil;&atilde;o para o novo sistema.</p>
-                    </p>
-                    <p>
-                        <p><strong>Unidades do RU</strong></p>
-                    </p>
-                    <p>
-                        <p>O novo refeit&oacute;rio do RU, localizado entre os setores de aulas&nbsp;3 e 4, passa a funcionar apenas para almo&ccedil;o, das&nbsp;11h &agrave;s&nbsp;13h,&nbsp;e com o limite de mil refei&ccedil;&otilde;es, em virtude da capacidade de atendimento do local. O RU Central e o Refeit&oacute;rio da Biom&eacute;dica, no Centro de Ci&ecirc;ncias da Sa&uacute;de (CCS), voltam a atender o p&uacute;blico para almo&ccedil;o e jantar, normalmente. A limita&ccedil;&atilde;o de usu&aacute;rio, no caso do novo refeit&oacute;rio, &eacute; para evitar a forma&ccedil;&atilde;o de filas e darmais comodidade aos usu&aacute;rios, enfatiza&nbsp;Michelle Medeiros.</p>
-                    </p>
-                    <p>
-                        <p><strong>Fonte:</strong> Ascom Reitoria/Setor de M&iacute;dias da SEDIS/UFRN.</p>
-                    </p>
-
-                    <div id="carousel-ru-central-reabre-ao-publico-nesta-segunda-feira-17" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item  active ">
-                                <img class="img-responsive" src="http://www.ru.ufrn.br/imagens_destaques/3497ee2c4926c4d153402d1b880fc36d.jpeg" alt="Barras de apoio de apoio, rampa de acessibilidade e piso t&aacute;til foram instalados.">
-                                <div class="carousel-caption">
-                                    Barras de apoio de apoio, rampa de acessibilidade e piso t&aacute;til foram instalados.
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <img class="img-responsive" src="http://www.ru.ufrn.br/imagens_destaques/d152b0d804e55838ebe6b849b375be93.jpeg" alt="Balc&atilde;o para entrega de pratos foi adaptado.">
-                                <div class="carousel-caption">
-                                    Balc&atilde;o para entrega de pratos foi adaptado.
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <img class="img-responsive" src="http://www.ru.ufrn.br/imagens_destaques/8fb6d5d43911a8eaba678d3942b750d5.jpeg" alt="Banheiro feminino recebeu barras de apoio.">
-                                <div class="carousel-caption">
-                                    Banheiro feminino recebeu barras de apoio.
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <img class="img-responsive" src="http://www.ru.ufrn.br/imagens_destaques/1c2dbe2d7abb9865a8ea8d8bb0c617e9.jpeg" alt="Balc&atilde;o para higieniza&ccedil;&atilde;o das m&atilde;os foi adaptado.">
-                                <div class="carousel-caption">
-                                    Balc&atilde;o para higieniza&ccedil;&atilde;o das m&atilde;os foi adaptado.
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <img class="img-responsive" src="http://www.ru.ufrn.br/imagens_destaques/919db54edc6ae18bec08563b9abb0bea.jpeg" alt="Diretora do RU, Michelle Medeiros, fala sobre as obras de reforma.">
-                                <div class="carousel-caption">
-                                    Diretora do RU, Michelle Medeiros, fala sobre as obras de reforma.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-ru-central-reabre-ao-publico-nesta-segunda-feira-17" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-ru-central-reabre-ao-publico-nesta-segunda-feira-17" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- ./Modal notícias -->
-    <!-- Modal sugestao de alimento -->
-
-
+    <?php include("inc/modal-alimentacao.php"); ?>
+    <?php include("inc/modal-noticia.php"); ?>
     <?php include("inc/modal-nutri.php"); ?>
     <?php include("inc/modal-historia.php"); ?>
 

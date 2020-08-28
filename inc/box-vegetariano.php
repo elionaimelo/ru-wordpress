@@ -29,12 +29,17 @@
                                         $class = get_field('refeicao');
                                     ?>
 
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
+<li class="<?php echo $class; ?>">
+                        <a href="#" data-toggle="modal" data-target="#alimentacao<?php echo $id = get_the_ID(); ?>">
+                        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?><?php the_title(); ?>
+                    </a>
+                    </li>
                                     <?php endwhile; ?>
                                 </ul>
-                            <?php endif; ?>
+                                
+                                <?php else :
+                                echo '<p class="sem-alimentacao">sem alimentação cadastrada</p>';
+                            endif; ?>
                             <?php wp_reset_query();     // Restore global post data stomped by the_post(). 
                             ?>
                             <?php
@@ -60,9 +65,11 @@
                                         $class = get_field('refeicao');
                                     ?>
 
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
+<li class="<?php echo $class; ?>">
+                        <a href="#" data-toggle="modal" data-target="#alimentacao<?php echo $id = get_the_ID(); ?>">
+                        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?><?php the_title(); ?>
+                    </a>
+                    </li>
                                     <?php endwhile; ?>
                                 </ul>
                             <?php endif; ?>
@@ -91,9 +98,11 @@
                                         $class = get_field('refeicao');
                                     ?>
 
-                                        <li <?php echo $class; ?>>
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
+<li class="<?php echo $class; ?>">
+                        <a href="#" data-toggle="modal" data-target="#alimentacao<?php echo $id = get_the_ID(); ?>">
+                        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?><?php the_title(); ?>
+                    </a>
+                    </li>
                                     <?php endwhile; ?>
                                 </ul>
                             <?php endif; ?>

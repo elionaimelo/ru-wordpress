@@ -1,3 +1,10 @@
+
+:focus {outline:none;}
+
+body {
+    outline: none !important;
+}
+
 .carousel-caption img {
     max-width: 100%;
     width: auto;
@@ -26,4 +33,62 @@
 .form-digai .form-control {
     font-size: inherit;
     font-weight: 500;
+}
+
+.modal.in .modal-dialog {
+    position: relative;
+}
+.modal-historia .close {
+    position: absolute;
+    right: 20px;
+}
+
+.modal .wp-post-image{
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.sem-alimentacao {
+    color: black;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+
+.aplicativo {
+    background: #e63946;
+    padding: 10px 0 60px !important;
+}
+
+.aplicativo h1 {
+    color: white;
+}
+.aplicativo .img-googleplay , .img-applestore {
+    display: block;
+    margin: auto;
+    margin-top: 82px;
+}
+
+.aplicativo .embreve {
+    margin-top: 84px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.ingredientes a {
+    color: black;
+}
+
+.ingredientes a:hover {
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .aplicativo h1 {
+        text-align: center;
+    }
+
+    .aplicativo .img-applestore {
+        margin-top: 20px;
+    }
 }
