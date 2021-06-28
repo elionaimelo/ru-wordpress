@@ -1,94 +1,261 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+:focus {
+  outline: none;
+}
 
-:focus {outline:none;}
+html,
+body {
+  height: 100%;
+}
 
 body {
-    outline: none !important;
+  outline: none !important;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+input[data-function*="swipe"] {
+  position: absolute;
+  opacity: 0;
+}
+
+label[data-function*="swipe"] {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  z-index: 1;
+  display: block;
+  width: 42px;
+  height: 42px;
+  font: 42px/42px fontawesome;
+  text-align: center;
+  color: #444;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s;
+}
+
+.navbar-trans li>a:hover {
+    color: #068ab3;
+    background-color: transparent;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.bg-green {
+  background-color: #007f3a;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.bg-secao-resolucoes {
+  background: url(../img/img-resolucoes.png) center no-repeat;
+  height: 270px;
+    background-size: cover;
+    margin-top: -18px;
+    display: flex;
+    align-items: center;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.bg-green button {
+  color: white;
+}
+
+.bg-green .btn-link:focus, .bg-green .btn-link:hover {
+  color: white;
+}
+
+input[data-function*="swipe"]:checked ~ label[data-function*="swipe"] {
+  transform: translate3d(-260px, 0, 0);
+}
+
+.content {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s;
+}
+
+input[data-function*="swipe"]:checked ~ .content {
+  transform: translate3d(-260px, 0px, 0px);
+}
+
+input[data-function*="swipe"]:checked ~ .sidebar {
+  transform: translate3d(0px, 0px, 0px);
+}
+input[data-function*="swipe"]:checked ~ .sidebar .menu li {
+  width: 100%;
+}
+
+.sidebar {
+  transform: translate3d(260px, 0px, 0px);
+  position: absolute;
+  width: 260px;
+  color: #1c75bb;
+  right: 0;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+p {
+  line-height: 2.5rem;
 }
 
 .carousel-caption img {
-    max-width: 100%;
-    width: auto;
+  max-width: 100%;
+  width: auto;
 }
 
-.historia h1>a {
-    overflow-wrap: break-word;
+.historia h1 > a {
+  overflow-wrap: break-word;
+}
+
+.custom-logo {
+  margin-top: 6px;
 }
 
 .digai .form-digai {
-    padding: 20px 40px;
+  padding: 20px 40px;
 }
 
 .form-digai p {
-    font-size: initial;
-    margin-top: 0;
-    line-height: 23px;
+  font-size: initial;
+  margin-top: 0;
+  line-height: 23px;
 }
 
 .form-digai label {
-    font-size: 14px;
-    color: #1c75bb;
-    width: 100%;
+  font-size: 14px;
+  color: #1c75bb;
+  width: 100%;
 }
 
 .form-digai .form-control {
-    font-size: inherit;
-    font-weight: 500;
+  font-size: inherit;
+  font-weight: 500;
 }
 
 .modal.in .modal-dialog {
-    position: relative;
+  position: relative;
 }
 .modal-historia .close {
-    position: absolute;
-    right: 20px;
+  position: absolute;
+  right: 20px;
 }
 
-.modal .wp-post-image{
-    margin: auto;
-    margin-bottom: 30px;
+.modal .wp-post-image {
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .sem-alimentacao {
-    color: black;
-    margin-left: 17px;
-    margin-top: 20px;
+  color: black;
+  margin-left: 17px;
+  margin-top: 20px;
 }
 
 .aplicativo {
-    background: #e63946;
-    padding: 10px 0 60px !important;
+  background: #e63946;
+  padding: 10px 0 60px !important;
 }
 
 .aplicativo h1 {
-    color: white;
+  color: white;
 }
-.aplicativo .img-googleplay , .img-applestore {
-    display: block;
-    margin: auto;
-    margin-top: 82px;
+.aplicativo .img-googleplay,
+.img-applestore {
+  display: block;
+  margin: auto;
+  margin-top: 82px;
 }
 
 .aplicativo .embreve {
-    margin-top: 84px;
-    font-size: 30px;
-    text-transform: uppercase;
-    color: white;
+  margin-top: 84px;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: white;
 }
 
 .ingredientes a {
-    color: black;
+  color: black;
 }
 
 .ingredientes a:hover {
-    color: white;
+  color: white;
+}
+
+.modal-sugestao label {
+  display: block;
+}
+
+.conteudo h1 {
+  margin-top: 10px;
+  color: #e63946;
+}
+
+.conteudo li {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.page-template-modeloSobre figure {
+  margin: 10px auto 20px auto;
+}
+
+div.custom-menu-class ul {
+  margin: 0px;
+  padding-left: 0;
+  list-style-type: none;
+  list-style: none;
+  list-style-image: none;
+  text-align: right;
+}
+div.custom-menu-class li {
+  padding: 13px 15px 0px 15px;
+  display: inline-block;
+  color: #0c609c;
+  height: 51px;
+}
+div.custom-menu-class li.current_page_item {
+  background-color: #0c609c;
+}
+
+div.custom-menu-class li.current_page_item a {
+  color: white;
+}
+
+div.custom-menu-class a {
+  text-transform: uppercase;
+}
+
+.menu-icon {
+  display: none !important;
 }
 
 @media screen and (max-width: 600px) {
-    .aplicativo h1 {
-        text-align: center;
-    }
+  .aplicativo h1 {
+    text-align: center;
+  }
 
-    .aplicativo .img-applestore {
-        margin-top: 20px;
-    }
+  .menu-icon {
+    display: block !important;
+  }
+
+  .menu-desk {
+    display: none;
+  }
+
+  .aplicativo .img-applestore {
+    margin-top: 20px;
+  }
 }

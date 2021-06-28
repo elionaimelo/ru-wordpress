@@ -16,7 +16,7 @@
                                 'order'                => 'DESC',
                                 'meta_query' => array(
                                     array(
-                                        'key' => 'data_vegetariano',
+                                        'key' => 'data_refeicao',
                                         'value' => $today,
                                     )
                                 )
@@ -52,7 +52,7 @@
                                 'order'                => 'DESC',
                                 'meta_query' => array(
                                     array(
-                                        'key' => 'data_vegetariano',
+                                        'key' => 'data_refeicao',
                                         'value' => $today,
                                     )
                                 )
@@ -85,7 +85,7 @@
                                 'order'                => 'DESC',
                                 'meta_query' => array(
                                     array(
-                                        'key' => 'data_vegetariano',
+                                        'key' => 'data_refeicao',
                                         'value' => $today,
                                     )
                                 )

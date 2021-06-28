@@ -15,7 +15,7 @@
             'order'                => 'DESC',
             'meta_query' => array(
                 array(
-                    'key' => 'data_prato_principal',
+                    'key' => 'data_refeicao',
                     'value' => $today,
                 )
             )
@@ -49,7 +49,7 @@
             'order'                => 'DESC',
             'meta_query' => array(
                 array(
-                    'key' => 'data_prato_principal',
+                    'key' => 'data_refeicao',
                     'value' => $today,
                 )
             )
@@ -82,7 +82,7 @@
             'order'                => 'DESC',
             'meta_query' => array(
                 array(
-                    'key' => 'data_prato_principal',
+                    'key' => 'data_refeicao',
                     'value' => $today,
                 )
             )
